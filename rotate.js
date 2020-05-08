@@ -14,6 +14,7 @@ $.extend(true, $.fancybox.defaults, {
 });
 var fancyboxRotateCurr = 0, fancyboxIsRuning = false, fancyboxRotateClss = ['rotate0', 'rotate90', 'rotate180', 'rotate270', 'rotate360'];
 $(document).delegate('[data-fancybox-rotate]', 'click', function () {
+    console.log(2222);
     if (fancyboxIsRuning) {
         return;
     }
@@ -25,8 +26,5 @@ $(document).delegate('[data-fancybox-rotate]', 'click', function () {
     }
     $(".fancybox-stage").removeClass('animated');
     $(".fancybox-stage").addClass(fancyboxRotateClss[fancyboxRotateCurr]);
-    setTimeout(function () { $(".fancybox-stage").addClass('animated'); fancyboxIsRuning = false; }, 160);
-});
-$(document).delegate('[data-fancybox-prev],[data-fancybox-next]', 'click', function () {
-    $(".fancybox-stage")[0].className = "fancybox-stage";
+    setTimeout(function () { $(".fancybox-stage").addClass('animated'); fancyboxIsRuning = false; }, 80);
 });
